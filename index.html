@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Listee : C++ list comprehensions. You know you want it." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Listee</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/bgbnbigben/listee">View on GitHub</a>
+
+          <h1 id="project_title">Listee</h1>
+          <h2 id="project_tagline">C++ list comprehensions. You know you want it.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/bgbnbigben/listee/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/bgbnbigben/listee/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>listee</h1>
+
+<h1></h1>
+
+<p>C++ list comprehensions! Well, almost.....</p>
+
+<p>This project attempts to bring python's <em>list comprehensions</em> to C++. You see,
+in python, you can do magic like this:</p>
+
+<pre><code>l1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+l2 = [x for x in l1 if x%2 == 0]
+# l2 = [2, 4, 6, 8, 10]
+</code></pre>
+
+<p>C++ doesn't let you do this, but with the advent of lambdas and other
+functional magic, I feel like it really should let you. As such, I'm going to
+attempt to bring these to C++.</p>
+
+<p>Restrictions include not being able to use the if and for keywords -- these are
+part of core C++ and attempting to use them will cause compile errors, severe
+headaches, the zombie apocalypse and all sorts of other issues. Instead, for
+now, I'm going to use take, with, in, and where.</p>
+
+<p>In other words, the C++ equivalent would be:</p>
+
+<pre><code>auto l1 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+auto l2 = take x with x in l1 where x % 2 == 0;
+</code></pre>
+
+<p>Isn't this cool!</p>
+
+<h2>Features</h2>
+
+<p>The obvious feature is the wonderful new syntax you're able to use, simply by
+adding <code>#include &lt;listee&gt;</code> to your code. However, on top of this:</p>
+
+<ul>
+<li>Asynchronous/lazy evaluation. In the above example, l2 will be evaluated
+either a) in the background while your program does nothing, or waits for
+input, or etc, or b) only when you need its contents. This lazy/asynchronous
+behaviour is provided by the magical new standard interface of C++11, and
+requires no external dependencies</li>
+<li>No external dependencies. No boost, no library that you have to compile from
+source but never compiles, nothing. The only required header files and
+libraries are those in the C++11 standard.</li>
+<li>Fun. Seriously, you've always <em>wanted</em> to use this python-esque syntax. You
+know it'll reduce bugs, because you don't have to write 90 lines of code
+every time you want to do it. You don't have to worry about writing templated
+functions and types and all sorts of voodoo witchcraft just to make your code
+compile. And now you can.</li>
+</ul><h3>Limitations</h3>
+
+<p>Obviously, as far as emulating python syntax goes, this is pretty terrible.
+However, unfortunately, we simply can't; for and if are reserved keywords in
+C++ and there's no way I can override them without screwing up the language (or
+the rest of your code, more importantly). As such, we get the slightly more
+verbose syntax as above.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Listee maintained by <a href="https://github.com/bgbnbigben">bgbnbigben</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-32568864-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
