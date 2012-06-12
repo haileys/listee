@@ -16,7 +16,7 @@ attempt to bring these to C++.
 
 Restrictions include not being able to use the if and for keywords -- these are
 part of core C++ and attempting to use them will cause compile errors, severe
-headaches, the zombie apocalpyse and all sorts of other issues. Instead, for
+headaches, the zombie apocalypse and all sorts of other issues. Instead, for
 now, I'm going to use take, with, in, and where.
 
 In other words, the C++ equivalent would be:
@@ -28,7 +28,7 @@ Isn't this cool!
 
 ## Features ##
 The obvious feature is the wonderful new syntax you're able to use, simply by
-adding ```#include <listee.h>``` to your code. However, on top of this:
+adding ```#include <listee>``` to your code. However, on top of this:
 * Asynchronous/lazy evaluation. In the above example, l2 will be evaluated
   either a) in the background while your program does nothing, or waits for
   input, or etc, or b) only when you need its contents. This lazy/asynchronous
@@ -38,7 +38,7 @@ adding ```#include <listee.h>``` to your code. However, on top of this:
   source but never compiles, nothing. The only required header files and
   libraries are those in the C++11 standard.
 * Fun. Seriously, you've always *wanted* to use this python-esque syntax. You
-  know it'll reduce bugs, beacuse you don't have to write 90 lines of code
+  know it'll reduce bugs, because you don't have to write 90 lines of code
   every time you want to do it. You don't have to worry about writing templated
   functions and types and all sorts of voodoo witchcraft just to make your code
   compile. And now you can.
